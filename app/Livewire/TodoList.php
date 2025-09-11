@@ -12,7 +12,7 @@ class TodoList extends Component
     public $newPriority = 'medium';
     public $newDueDate = null;
 
-    protected $rule = [
+    protected $rules = [
         'newTitle' => 'required|string|min:1|max:255',
         'newDescription' => 'nullable|string|max:1000',
         'newPriority' => 'required|in:low,medium,high',
@@ -33,7 +33,7 @@ class TodoList extends Component
         $this->newPriority = 'medium'; // Default Einstellung
     }
 
-    public function toggleComplete($id) {
+    public function toggleCompleted($id) {
         $task = Task::findOrFail($id);
         $task->update(['completed' => ! $task->completed]);
     }
