@@ -5,18 +5,18 @@
             type="text"
             wire:model.defer="newTitle"
             placeholder="Titel der Aufgabe"
-            class="w-full rounded border px-3 py-2 focus:outline-none focus:ring"
+            class="form-input"
         />
 
         <textarea
             wire:model.defer="newDescription"
             placeholder="Beschreibung (optional)"
-            class="w-full rounded border px-3 py-2 focus:outline-none focus:ring"
+            class="form-textarea"
         ></textarea>
 
         <div class="flex gap-3">
             <!-- Priorität -->
-            <select wire:model.defer="newPriority" class="rounded border px-3 py-2">
+            <select wire:model.defer="newPriority" class="form-select">
                 <option value="low">Niedrig</option>
                 <option value="medium">Mittel</option>
                 <option value="high">Hoch</option>
@@ -26,7 +26,7 @@
             <input
                 type="date"
                 wire:model.defer="newDueDate"
-                class="rounded border px-3 py-2"
+                class="form-input"
             />
         </div>
 
