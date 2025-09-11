@@ -1,3 +1,28 @@
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
+
+@layer components {
+    .form-input {
+        @apply w-full rounded border px-3 py-2 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500;
+    }
+
+    .form-select {
+        @apply rounded border px-3 py-2 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500;
+    }
+
+    .form-textarea {
+        @apply w-full rounded border px-3 py-2 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500;
+    }
+
+    .task-title {
+        @apply text-gray-900;
+    }
+
+    .task-title-completed {
+        @apply line-through text-gray-400;
+    }
+}
