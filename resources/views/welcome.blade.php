@@ -198,12 +198,6 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-lg shadow-gray-500/20 dark:bg-zinc-900 dark:shadow-none dark:ring-1 dark:ring-inset dark:ring-white/5">
-                            <div class="pt-3 sm:pt-5 w-full">
-                                <h2 class="text-xl font-semibold text-black dark:text-white mb-4">Meine ToDo-Liste</h2>
-                                <livewire:todo-list />
-                            </div>
-                        </div>
                     </div>
                 </main>
 
