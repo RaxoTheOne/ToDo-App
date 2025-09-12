@@ -6,7 +6,7 @@
         <!-- Sidebar -->
         <div class="fixed inset-y-0 left-0 w-64 bg-white/80 backdrop-blur-sm shadow-lg z-10">
             <div class="p-6">
-                <h1 class="text-2xl font-bold text-gray-800 mb-8">Meine Aufgaben</h1>
+                <h1 class="text-2xl font-bold text-gray-800 mb-8">Meine ToDo's</h1>
 
                 <!-- Navigation -->
                 <nav class="space-y-2">
