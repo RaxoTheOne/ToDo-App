@@ -1,6 +1,6 @@
 <div class="w-full">
     <!-- Eingabeformular -->
-    <form wire:submit.prevent="addTask" class="space-y-3">
+    <form wire:submit.prevent="addTask" class="flex flex-col space-y-3">
         <input
             type="text"
             wire:model.defer="newTitle"
