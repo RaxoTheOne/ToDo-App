@@ -43,8 +43,8 @@
         @forelse($tasks as $task)
             <li class="rounded border p-3 flex justify-between items-center bg-white">
                 <div class="flex flex-col">
-                    <span class="{{ $task->completed ? 'line-through text-gray-400' : '' }}">
-                        <strong>{{ $task->title }}</strong>
+                    <span class="{{ $task->completed ? 'line-through text-gray-700' : '' }}">
+                        <strong class="text-gray-900">{{ $task->title }}</strong>
                     </span>
                     @if($task->description)
                         <span class="text-sm text-gray-600">{{ $task->description }}</span>
