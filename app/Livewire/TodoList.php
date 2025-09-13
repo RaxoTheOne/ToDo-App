@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Task;
+use Livewire\Attributes\Url;
 
 class TodoList extends Component
 {
@@ -11,6 +12,8 @@ class TodoList extends Component
     public $newDescription = '';
     public $newPriority = 'medium';
     public $newDueDate = null;
+    #[Url]
+    public $filter = 'all'; // all, today, this_week
 
     protected $rules = [
         'newTitle' => 'required|string|min:1|max:255',
@@ -43,7 +46,14 @@ class TodoList extends Component
     }
     public function render()
     {
-        $tasks = Task::orderBy('created_at', 'desc')->get();
+        $query = Task::query();
+
+        if($this->filter === 'today') {
+            $query->whereDate('due_date', today());
+        } elseif($this->filter === 'this_week') {
+            $query->whereBetween('due_date', [now()->startOfWeek(), now()->endOfWeek()]);
+        }
+        $tasks = $query->orderBy('created_at', 'desc')->get();
         return view('livewire.todo-list', compact('tasks'));
     }
 }
