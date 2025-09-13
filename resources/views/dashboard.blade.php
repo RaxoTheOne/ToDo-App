@@ -9,9 +9,12 @@
                 <h1 class="text-2xl font-bold text-gray-800 mb-8">Meine ToDo's</h1>
 
                 <!-- Navigation -->
+                @php
+                    $active = request('filter', 'all');
+                @endphp
                 <nav class="space-y-2">
-                    <a href="#"
-                        class="flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg">
+                    <a href="{{ request()->url() }}?filter=all"
+                        class="flex items-center px-4 py-2 text-sm font-medium rounded-lg {{ $active === 'all' ? 'text-white bg-blue-600' : 'text-gray-700 hover:bg-gray-100' }}">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
@@ -19,16 +22,16 @@
                         </svg>
                         Alle Aufgaben
                     </a>
-                    <a href="#"
-                        class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <a href="{{ request()->url() }}?filter=today"
+                        class="flex items-center px-4 py-2 text-sm font-medium rounded-lg {{ $active === 'today' ? 'text-white bg-blue-600' : 'text-gray-700 hover:bg-gray-100' }}">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         Heute
                     </a>
-                    <a href="#"
-                        class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg">
+                    <a href="{{ request()->url() }}?filter=this_week"
+                        class="flex items-center px-4 py-2 text-sm font-medium rounded-lg {{ $active === 'this_week' ? 'text-white bg-blue-600' : 'text-gray-700 hover:bg-gray-100' }}">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
