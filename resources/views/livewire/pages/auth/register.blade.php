@@ -38,7 +38,7 @@ new #[Layout('layouts.guest')] class extends Component {
 
         $this->redirect(route('dashboard', absolute: false), navigate: true);
     }
-}; ?>
+?>
 
 <div>
     <form wire:submit="register">
