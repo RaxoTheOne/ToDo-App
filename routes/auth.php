@@ -1,8 +1,14 @@
 <?php
 
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Auth\GuestVerifyEmailController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
+
+// Öffentliche Verifizierungsroute (ohne Auth), global verfügbar
+Route::get('email/verify/{id}/{hash}', GuestVerifyEmailController::class)
+    ->middleware(['signed', 'throttle:6,1'])
+    ->name('verification.verify.guest');
 
 Route::middleware('guest')->group(function () {
     Volt::route('register', 'pages.auth.register')
