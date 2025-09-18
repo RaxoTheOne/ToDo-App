@@ -43,7 +43,7 @@
 
                 <!-- Projekte -->
                 <div class="mt-8">
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Projekte</h3>
+                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Kategorien</h3>
                     <div class="space-y-1">
                         <a href="#"
                             class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">
